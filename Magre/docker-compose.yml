@@ -1,0 +1,39 @@
+
+services:
+    php:
+        image: php:8.3-apache
+        container_name: magre_php8_3
+        ports:
+            - "8046:80"
+        volumes:
+            - ./src:/var/www/html
+            - ./img:/var/www/html/img # Ajoutez cette ligne pour monter le dossier img
+        build:
+            context: .
+            dockerfile: Dockerfile
+
+    db:
+        image: mysql:8.0
+        container_name: magre_mysql8_0
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: magre
+            MYSQL_USER: magre
+            MYSQL_PASSWORD: magre_password
+        volumes:
+            - "./data:/docker-entrypoint-initdb.d"
+        ports:
+            - "3366:3306"
+
+    phpma:
+        image: phpmyadmin/phpmyadmin
+        container_name: magre_phpmyadmin
+        environment:
+            PMA_ARBITRARY: 1
+            PMA_HOST: db
+            PMA_USER: root
+            PMA_PASSWORD: root
+            UPLOAD_LIMIT: 20M
+        ports:
+            - "8064:80"
