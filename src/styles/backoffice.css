@@ -1,1 +1,41 @@
 /*mathilde css*/
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+}
+
+.image-container {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 1s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.08);
+}
+
+.image-container .overlay-text {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2;
+    color: var(--dark);
+}
