@@ -1,4 +1,4 @@
-/*mathilde css*/
+/*page d'acceuil*/
 
 .container {
     display: flex;
@@ -38,4 +38,94 @@
     font-weight: bold;
     z-index: 2;
     color: var(--dark);
+}
+
+/*page de gestion des propriétés*/
+
+.sidebar {
+    width: 25%;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.sidebar a.active {
+    color: #007bff; /* Couleur du lien actif */
+}
+
+.table-container {
+    width: 70%;
+    float: right;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    position: relative;
+    cursor: pointer;
+}
+
+.filter-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    z-index: 10;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container.active {
+    display: block;
+}
+
+.filter-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.filter-container select,
+.filter-container input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.filter-container button {
+    width: 100%;
+    padding: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-container button:hover {
+    background-color: #0056b3;
 }
