@@ -14,7 +14,6 @@
     <main>
         <form method="POST">
             <img src="" alt="">
-            <h1>Inscription</h1>
             <div class="container-surname">
                 <label for="surname">Nom :</label>
                 <input type="text" class="form.input" name="surname" id="surname" placeholder="Nom de famille">
@@ -36,8 +35,6 @@
                 <input type="password" class="form.input" name="pass2" id="pass2" placeholder="Confirmation de mot de passe">
             </div>
             <button type="submit" class="connexion-button">S'inscrire</button>
-            <p>Vous avez déjà un compte ? <a href="connexion.php">Connectez-vous</a></p>
-            <span class="follow">Suivez-nous</span>
             <div class="container-logos">
                 <a href="#"><img src="./images/logos/facebook.svg" alt="Logo facebook"></a>
                 <a href="#"><img src="./images/logos/instagram.svg" alt="Logo instagram"></a>

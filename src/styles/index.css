@@ -1,1 +1,47 @@
-/*greg css*/
+/* INSCRIPTION CSS */
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+  position: relative;
+  top: 150px;
+  background: url(../images/logos/maison.jpg) no-repeat;
+  background-position-y: 50%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: #f5f5f5;
+  padding: 60px 70px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  align-items: center;
+  position: relative;
+  left: 15%;
+  background: var(--main);
+}
+
+label {
+  display: none;
+}
+
+input {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.container-logos {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.container-logos img {
+  width: 25px;
+  height: 25px;
+}
