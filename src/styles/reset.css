@@ -76,3 +76,12 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+:root { --main: #002349;
+--secondary: #FFC266;
+--dark: #1e1e1e;
+--clear: #f5f5f5;
+--FSize: 1em; /*16px*/
+--TitleSize: 1.25em; /*25px*/
+--H2Size: 1.125em ; /*20px*/
+--LHeight: 1.5;}
