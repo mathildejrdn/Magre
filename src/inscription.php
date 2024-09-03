@@ -12,38 +12,43 @@
 
 <body>
     <main>
-        <form method="POST">
-            <img src="" alt="">
-            <h1>Inscription</h1>
-            <div class="container-surname">
-                <label for="surname">Nom :</label>
-                <input type="text" class="form.input" name="surname" id="surname" placeholder="Nom de famille">
-            </div>
-            <div class="container-name">
-                <label for="name">Prénom :</label>
-                <input type="text" class="form.input" name="name" id="name" placeholder="Prénom">
-            </div>
-            <div class="container-email">
-                <label for="email">Email :</label>
-                <input type="email" class="form.input" name="email" id="email" placeholder="Email">
-            </div>
-            <div class="container-password">
-                <label for="pass">Mot de passe :</label>
-                <input type="password" class="form.input" name="pass" id="pass" placeholder="Mot de passe">
-            </div>
-            <div class="container-confirm">
-                <label for="pass2">Confirmation :</label>
-                <input type="password" class="form.input" name="pass2" id="pass2" placeholder="Confirmation de mot de passe">
-            </div>
-            <button type="submit" class="connexion-button">S'inscrire</button>
-            <p>Vous avez déjà un compte ? <a href="connexion.php">Connectez-vous</a></p>
-            <span class="follow">Suivez-nous</span>
-            <div class="container-logos">
-                <a href="#"><img src="./images/logos/facebook.svg" alt="Logo facebook"></a>
-                <a href="#"><img src="./images/logos/instagram.svg" alt="Logo instagram"></a>
-                <a href="#"><img src="./images/logos/twitter.svg" alt="Logo twitter"></a>
-            </div>
-        </form>
+
+        <section class="form-inscription">
+            <form method="POST">
+                <img src="./images/logos/MG logo trans.png" alt="Logo">
+                <div class="container-surname">
+                    <label for="surname">Nom :</label>
+                    <input type="text" class="form.input" name="surname" id="surname" placeholder="Nom">
+                </div>
+                <div class="container-name">
+                    <label for="name">Prénom :</label>
+                    <input type="text" class="form.input" name="name" id="name" placeholder="Prénom">
+                </div>
+                <div class="container-email">
+                    <label for="email">Email :</label>
+                    <input type="email" class="form.input" name="email" id="email" placeholder="Email">
+                </div>
+                <div class="container-password">
+                    <label for="pass">Mot de passe :</label>
+                    <input type="password" class="form.input" name="pass" id="pass" placeholder="Mot de passe">
+                </div>
+                <div class="container-confirm">
+                    <label for="pass2">Confirmation :</label>
+                    <input type="password" class="form.input" name="pass2" id="pass2" placeholder="Confirmation">
+                </div>
+                <button type="submit" class="connexion-button">S'inscrire</button>
+
+                <p>Avez-vous un compte ?</p>
+                <button type="submit" class="connexion-button">Se connecter</button>
+
+
+                <div class="container-logos">
+                    <a href="#"><img src="./images/logos/facebook.svg" alt="Logo facebook"></a>
+                    <a href="#"><img src="./images/logos/instagram.svg" alt="Logo instagram"></a>
+                    <a href="#"><img src="./images/logos/twitter.svg" alt="Logo twitter"></a>
+                </div>
+            </form>
+        </section>
     </main>
 
 </body>

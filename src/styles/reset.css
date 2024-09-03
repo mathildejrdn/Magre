@@ -51,10 +51,6 @@ a:not([class]) {
 }
 
 /* Make images easier to work with */
-img {
-  max-width: 100%;
-  display: block;
-}
 
 /* Natural flow and rhythm in articles by default */
 article > * + * {
@@ -79,12 +75,14 @@ select {
   }
 }
 
-:root { --main: #002349;
-    --main2: #00234966;
---secondary: #FFC266;
---dark: #1e1e1e;
---clear: #f5f5f5;
---FSize: 1em; /*16px*/
---TitleSize: 1.25em; /*25px*/
---H2Size: 1.125em ; /*20px*/
---LHeight: 1.5;}
+:root {
+  --main: #002349;
+  --main2: #00234966;
+  --secondary: #ffc266;
+  --dark: #1e1e1e;
+  --clear: #f5f5f5;
+  --FSize: 1em; /*16px*/
+  --TitleSize: 1.25em; /*25px*/
+  --H2Size: 1.125em; /*20px*/
+  --LHeight: 1.5;
+}
