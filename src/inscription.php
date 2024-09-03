@@ -39,9 +39,9 @@
             <p>Vous avez déjà un compte ? <a href="connexion.php">Connectez-vous</a></p>
             <span class="follow">Suivez-nous</span>
             <div class="container-logos">
-                <a href="#"><img src="./img/connexion/facebook.svg" alt="Logo facebook"></a>
-                <a href="#"><img src="./img/connexion/instagram.svg" alt="Logo instagram"></a>
-                <a href="#"><img src="./img/connexion/twitter-x.svg" alt="Logo twitter"></a>
+                <a href="#"><img src="./images/logos/facebook.svg" alt="Logo facebook"></a>
+                <a href="#"><img src="./images/logos/instagram.svg" alt="Logo instagram"></a>
+                <a href="#"><img src="./images/logos/twitter.svg" alt="Logo twitter"></a>
             </div>
         </form>
     </main>
