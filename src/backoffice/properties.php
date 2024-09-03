@@ -41,8 +41,8 @@
                             <button onclick="applyFilters()">Appliquer</button>
                         </div>
                     </th>
-                    <th>Information</th>
-                    <th>Gestion</th>
+                    <th>Information propriété & client</th>
+                    <th>Gestion de la propriété</th>
                 </tr>
             </thead>
             <tbody>
@@ -72,6 +72,8 @@
                 </tr>
             </tbody>
         </table>
+        <button>Ajouter une propriété</button>
     </div>
+   
 </body>
 </html>

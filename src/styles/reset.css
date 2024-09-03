@@ -35,6 +35,8 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background-color: var(--clear);
+  font-family: Arial, sans-serif;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -78,6 +80,7 @@ select {
 }
 
 :root { --main: #002349;
+    --main2: #00234966;
 --secondary: #FFC266;
 --dark: #1e1e1e;
 --clear: #f5f5f5;
