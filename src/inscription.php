@@ -12,8 +12,11 @@
 
 <body>
     <main>
-
-        <section class="form-inscription">
+        <section>
+            <article class="container-display">
+                <p>Avez-vous un compte ?</p>
+                <button type="submit" class="connexion-button">Se connecter</button>
+            </article>
             <form method="POST">
                 <img src="./images/logos/MG logo trans.png" alt="Logo">
                 <div class="container-surname">
@@ -38,9 +41,10 @@
                 </div>
                 <button type="submit" class="connexion-button">S'inscrire</button>
 
-                <p>Avez-vous un compte ?</p>
-                <button type="submit" class="connexion-button">Se connecter</button>
-
+                <div class="container-login">
+                    <p>Avez-vous un compte ?</p>
+                    <button type="submit" class="connexion-button">Se connecter</button>
+                </div>
 
                 <div class="container-logos">
                     <a href="#"><img src="./images/logos/facebook.svg" alt="Logo facebook"></a>
