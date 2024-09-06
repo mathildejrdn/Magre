@@ -34,7 +34,7 @@ if (!empty($_POST)) {
             die("Les mots de passe ne correspondent pas.");
         }
 
-        require_once("connet.php");
+        require_once("./connect.php");
 
         // Requête SQL avec des placeholders
         $sql = "INSERT INTO users (name, surname, email, pass) VALUES (:name, :surname, :email, :pass)";
