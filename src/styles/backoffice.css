@@ -1,3 +1,16 @@
+button {
+    background-color: var(--secondary);
+    color: var(--dark);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold  !important; 
+    padding: 10px 20px;
+    display: block; 
+    margin: 0 auto; 
+}
+
+
 /*page d'acceuil*/
 .container {
     display: flex;
@@ -121,17 +134,6 @@ th {
     margin-bottom: 10px;
 }
 table button { width: 100%;}
-button {
-    background-color: var(--secondary);
-    color: var(--dark);
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold  !important; 
-    padding: 10px 20px;
-    display: block; 
-    margin: 0 auto; 
-}
 
 
     /* Styles popup */

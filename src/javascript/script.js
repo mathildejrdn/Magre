@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Parcourt toutes les lignes du tableau et applique les filtres
         document.querySelectorAll('tbody tr').forEach(function(row) {
-            var rowPrice = parseInt(row.cells[0].textContent.replace(/[^0-9]/g, ''), 10);
-            var rowRegion = row.cells[1].textContent.trim();
+            var rowPrice = parseInt(row.cells[1].textContent.replace(/[^0-9]/g, ''), 10);
+            var rowRegion = row.cells[2].textContent.trim();
 
             // Détermine si la ligne correspond aux critères de filtre
             var priceMatch = rowPrice <= priceRange;
@@ -73,40 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Applique les filtres lorsque le bouton "Appliquer" est cliqué
-    document.querySelectorAll('button[onclick="applyFilters()"]').forEach(button => {
-        button.addEventListener('click', applyFilters);
-    });
+    document.getElementById('apply-price-filter').addEventListener('click', applyFilters);
+    document.getElementById('apply-region-filter').addEventListener('click', applyFilters);
 
-    // JavaScript pour les popups
-    document.querySelectorAll('.infoIcon, .manageIcon').forEach(icon => {
-        icon.addEventListener('click', function() {
-            // Ferme les popups
-            document.querySelectorAll('.popup').forEach(popup => popup.style.display = 'none');
-            
-            // Montre le popup
-            const popupContent = icon.getAttribute('data-popup-content');
-            const popupElement = Array.from(document.querySelectorAll('.popup')).find(popup => popup.querySelector('.popup-content p').textContent === popupContent);
-            if (popupElement) {
-                popupElement.style.display = 'block';
-            }
-        });
-    });
-
-    // Gestion de la fermeture des popups avec le bouton "X"
-    document.querySelectorAll('.popup .close').forEach(button => {
-        button.addEventListener('click', function() {
-            // Trouve le parent popup et le cache
-            const popupElement = this.closest('.popup');
-            if (popupElement) {
-                popupElement.style.display = 'none';
-            }
-        });
-    });
-
-    // Fonction pour fermer les popups si on clique en dehors
-    document.addEventListener('click', function(event) {
-        if (!event.target.closest('.popup, .infoIcon, .manageIcon')) {
-            document.querySelectorAll('.popup').forEach(popup => popup.style.display = 'none');
-        }
-    });
 });
