@@ -24,7 +24,7 @@
                     Prix
                     <div class="filter-container" id="filter-price">
                         <label for="price-range">Filtrer par prix :</label>
-                        <input type="range" id="price-range" min="0" max="1000000" step="10000" value="500000">
+                        <input type="range" id="price-range" min="0" max="100000000" step="10000" value="500000">
                         <span id="price-value">500000 €</span>
                         <button id="apply-price-filter">Appliquer</button>
                     </div>
@@ -61,7 +61,7 @@
         <tbody>
             <tr>
                 <td>1</td>
-                <td>500000 €</td>
+                <td class="price">50000000</td>
                 <td>Île-de-France</td>
                 <td>Appartement</td>
                 <td>100</td>
