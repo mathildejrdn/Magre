@@ -22,12 +22,6 @@
                 <th>Id</th>
                 <th>
                     Prix
-                    <div class="filter-container" id="filter-price">
-                        <label for="price-range">Filtrer par prix :</label>
-                        <input type="range" id="price-range" min="0" max="100000000" step="10000" value="500000">
-                        <span id="price-value">500000 €</span>
-                        <button id="apply-price-filter">Appliquer</button>
-                    </div>
                 </th>
                 <th>
                     Région
