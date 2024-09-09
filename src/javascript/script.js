@@ -34,6 +34,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Fonction pour formater les prix
+    function formatPrice(price) {
+        let value = parseFloat(price.replace(/[^0-9]/g, ''));
+        if (value >= 1000000) {
+            return (value / 1000000).toFixed(0) + ' million d\'€'; // Pas de décimales
+        } else if (value >= 1000) {
+            return (value / 1000).toFixed(0) + ' mille €'; // Pas de décimales
+        } else {
+            return value + ' €'; // Affiche le prix tel quel
+        }
+    }
+
     // Fonction pour appliquer les filtres
     function applyFilters() {
         console.log("Applying filters..."); // Debugging
@@ -57,6 +69,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Met à jour les prix au format désiré
+    document.querySelectorAll('tbody tr').forEach(function(row) {
+        var priceCell = row.cells[1]; // Assurez-vous que l'index correspond à la colonne du prix
+        var formattedPrice = formatPrice(priceCell.textContent);
+        priceCell.textContent = formattedPrice;
+    });
 
     // Ajouter les événements pour les filtres régionaux
     document.getElementById('apply-region-filter').addEventListener('click', applyFilters);
