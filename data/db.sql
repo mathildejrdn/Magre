@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : ven. 06 sep. 2024 à 13:50
+-- Généré le : mar. 10 sep. 2024 à 07:26
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `magre`
 --
+CREATE DATABASE IF NOT EXISTS `magre` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `magre`;
 
 -- --------------------------------------------------------
 
@@ -100,6 +102,13 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `surname`, `name`, `email`, `pass`, `role`) VALUES
+(1, 'Admin', 'test', 'test@hotmail.fr', '$argon2id$v=19$m=65536,t=4,p=1$dC5mUVcxTDUzLmdMSE5RRg$PeLM8iMXFh1qVCub+CyyybKiAlurjRB9Pzn6c0vret0', 'USER');
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -177,7 +186,7 @@ ALTER TABLE `region`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
