@@ -1,9 +1,8 @@
-<?php 
-session_start ();
+<?php
+session_start();
 
 // Vérifie que c'est une adresse email conforme pour sécuriser
-function ValidateEmail($email)
-{
+function ValidateEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
 }
 
@@ -12,64 +11,64 @@ if (!empty($_POST)) {
     if (
         isset($_POST["email"], $_POST["pass"]) &&
         !empty($_POST["email"]) &&
-        !empty($_POST["pass"]) 
+        !empty($_POST["pass"])
     ) {
         // Vérifie aussi que l'user a mis une vraie adresse email en appelant la fonction établie plus haut
         if (!ValidateEmail($_POST["email"])) {
             die("Ce n'est pas une adresse email valide.");
         }
 
-        //connexion BDD
+        // Connexion BDD
         require_once('./connect.php');
 
-        //requête SQL
-        $sql = "SELECT * FROM 'user' WHERE 'email' = :email";
+        // Requête SQL
+        $sql = "SELECT * FROM `user` WHERE `email` = :email";
         
-        //préparation requête
-        $query = $db -> prepare ($sql);
+        // Préparation requête
+        $query = $db->prepare($sql);
     
         $query->bindValue(':email', $_POST['email']);
 
-        //exécution de la requête
-        $query->execute() 
+        // Exécution de la requête
+        $query->execute();
 
         $user = $query->fetch();
 
         if (!$user) {
-            die("l'utilisateur ou/et le mot de passe est invalide");
+            die("L'utilisateur ou le mot de passe est invalide.");
         }
 
-        //si l'user existe on peut vérifier son mdp
-        if (!password_verify)($_POST["pass"], $user["pass"])) 
-        {
-            die("l'utilisateur ou/et le mot de passe est invalide");            
+        // Si l'user existe on peut vérifier son mdp
+        if (!password_verify($_POST["pass"], $user["pass"])) {
+            die("L'utilisateur ou le mot de passe est invalide.");
         }
 
-        //utilisateur et MDP corrects, on continue pour se connecter en stockat dans la session les infos utilisateur
-        $_SESSION ["user"] = [
-            "user_id" => $user ["id"],
-            "name" => $name ["name"],
-            "surname" => $surname ["surname"],
-            "email" => $email ["email"],
-            "role" => $role ["role"] 
-        ] ;
+        // Utilisateur et MDP corrects, on continue pour se connecter en stockant dans la session les infos utilisateur
+        $_SESSION["user"] = [
+            "user_id" => $user["id"],
+            "name" => $user["name"],
+            "surname" => $user["surname"],
+            "email" => $user["email"],
+            "role" => $user["role"]
+        ];
 
-        //reconnaissance du rôle de l'utilisateur après la connexion
-        if(!$user ["role"] == "admin") {
+        // Reconnaissance du rôle de l'utilisateur après la connexion
+        if ($user["role"] == "admin") {
             $redirectUrl = "../backindex.php";
-        } elseif { 
-            (!$user ["role"] == "user")
-            $redirectUrl= "./index.php" ;
+        } elseif ($user["role"] == "USER") {
+            $redirectUrl = "./index.php";
         } else {
-            die("aucun rôle n'a été trouvé");
+            die("Aucun rôle n'a été trouvé.");
         }
 
-        header(location: $redirectUrl);
-        exit ();
-        else {
-            die('formulaire incomplet');
-        }
+        header("Location: $redirectUrl");
+        exit();
+    } else {
+        die("Formulaire incomplet.");
+    }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
