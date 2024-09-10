@@ -1,19 +1,20 @@
 <?php
 // Vérifie que c'est une adresse email conforme pour sécuriser
-function ValidateEmail($email) 
+function ValidateEmail($email)
 {
     return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
 }
 
 // Ici on vérifie que la variable $_POST n'est pas vide
 if (!empty($_POST)) {
-    if (isset($_POST["name"], $_POST["surname"], $_POST["email"], $_POST["pass"], $_POST["pass2"]) &&
+    if (
+        isset($_POST["name"], $_POST["surname"], $_POST["email"], $_POST["pass"], $_POST["pass2"]) &&
         !empty($_POST["name"]) &&
         !empty($_POST["surname"]) &&
         !empty($_POST["email"]) &&
         !empty($_POST["pass"]) &&
-        !empty($_POST["pass2"])) 
-    {
+        !empty($_POST["pass2"])
+    ) {
         // Strip tags du prénom et du nom pour protéger des injections
         $name = strip_tags($_POST["name"]);
         $surname = strip_tags($_POST["surname"]);
@@ -24,12 +25,13 @@ if (!empty($_POST)) {
         }
 
         // Vérification des deux champs de MDP pass et pass2
-        $pass = $_POST["pass"];
-        $pass2 = $_POST["pass2"];
-
+        if (isset($_POST["pass"]) && isset($_POST["pass2"])) {
+            $pass = $_POST["pass"];
+            $pass2 = $_POST["pass2"];
+        }
         // Doivent être strictement identiques avec l'indicateur ===
         if ($pass === $pass2) {
-            $pass = password_hash($pass, PASSWORD_ARGON2ID);
+            $pass = password_hash($_POST['pass'], PASSWORD_ARGON2ID);
         } else {
             die("Les mots de passe ne correspondent pas.");
         }
@@ -37,23 +39,21 @@ if (!empty($_POST)) {
         require_once("./connect.php");
 
         // Requête SQL avec des placeholders
-        $sql = "INSERT INTO users (name, surname, email, pass) VALUES (:name, :surname, :email, :pass)";
+        $sql = "INSERT INTO user (name, surname, email, pass, role) VALUES (:name, :surname, :email, '$pass', 'USER')";
 
         $query = $db->prepare($sql);
+
         $query->bindValue(':name', $name);
         $query->bindValue(':surname', $surname);
         $query->bindValue(':email', $_POST['email']);
-        $query->bindValue(':pass', $pass);
 
         if ($query->execute()) {
             // Redirection vers la page de login
-            header("Location: login.php");
+            header("Location: connexion.php");
             exit();
         } else {
-            die('Échec');
+            die('formulaire incomplet.');
         }
-    } else {
-        die('formulaire incomplet.');
     }
 }
 ?>
