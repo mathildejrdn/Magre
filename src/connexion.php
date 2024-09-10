@@ -1,4 +1,6 @@
-<?php
+<?php 
+session_start ();
+
 // Vérifie que c'est une adresse email conforme pour sécuriser
 function ValidateEmail($email)
 {
