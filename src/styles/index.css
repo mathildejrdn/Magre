@@ -4,14 +4,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70vh;
-  position: relative;
-  top: 150px;
-  background-position-y: 50%;
-}
-
-.container-display {
-  display: none;
+  height: 100vh;
+  background: url(../images/logos/maison.jpg) no-repeat;
 }
 
 form {
@@ -55,6 +49,18 @@ input {
   color: var(--dark);
 }
 
+.container-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.container-login a {
+  text-align: center;
+  color: var(--secondary);
+}
+
 .container-logos {
   display: flex;
   gap: 10px;
@@ -68,13 +74,7 @@ input {
 
 p {
   color: var(--secondary);
-  font-size: var(--Fpara);
-}
-
-.container-login {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  font-size: var(--FSize);
 }
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
@@ -82,20 +82,10 @@ p {
     background: url(../images/logos/maison.jpg) no-repeat;
   }
 
-  .container-login {
-    display: none;
-  }
-
   .container-display {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-
-  section {
-    display: flex;
-    align-items: center;
-    gap: 80px;
   }
 }
 
@@ -105,19 +95,48 @@ p {
     background-position: center;
   }
 
-  .container-login {
-    display: none;
-  }
-
   .container-display {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
+}
 
-  section {
-    display: flex;
-    align-items: center;
-    gap: 80px;
+/* CONNEXION CSS */
+
+.container-inscription p {
+  color: var(--secondary);
+  font-size: var(--FSize);
+}
+
+.container-inscription {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container-inscription a {
+  text-align: center;
+  color: var(--secondary);
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  main {
+    background: url(../images/logos/maison.jpg) no-repeat;
+  }
+
+  .container-inscription {
+    display: none;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  main {
+    background: url(../images/logos/maison.jpg) no-repeat;
+    background-position: center;
+  }
+
+  .container-inscription {
+    display: none;
   }
 }
