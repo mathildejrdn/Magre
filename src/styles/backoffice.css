@@ -181,7 +181,6 @@ table button { width: 100%;}
     justify-content: center;
     align-items: center;
     height: 50vh;
-    background-color: #f0f0f0;
     margin-top: 20%;
 }
 
@@ -218,6 +217,7 @@ form {
 form label {
     margin-bottom: 5px;
     font-weight: bold;
+    color: var(--main);
 }
 
 .form-input {
