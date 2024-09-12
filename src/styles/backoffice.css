@@ -16,6 +16,7 @@ button {
     display: flex;
     justify-content: space-evenly;
     gap: 5px;
+    margin-top:5%;
 }
 
 .image-container {
@@ -176,12 +177,12 @@ table button { width: 100%;}
         text-decoration: none;
             }
 /* Centrer le conteneur sur la page */
-.container {
+.containerform {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50vh;
-    margin-top: 20%;
+    margin-top: 15%;
 }
 
 /* Conteneur global */
@@ -245,4 +246,23 @@ textarea.form-input {
         width: 100%;
         margin-bottom: 20px;
     }
+}
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    text-align: center;
+}
+
+.center-container svg {
+    margin-bottom: 10px; /* Espace entre l'icône et le texte */
+}
+
+.center-container p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0; /* Retire les marges par défaut */
 }
