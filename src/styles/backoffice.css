@@ -175,3 +175,74 @@ table button { width: 100%;}
         color: black;
         text-decoration: none;
             }
+/* Centrer le conteneur sur la page */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #f0f0f0;
+    margin-top: 20%;
+}
+
+/* Conteneur global */
+.form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 800px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Image à gauche */
+.form-container img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Styles du formulaire à droite */
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 20px;
+    width: 100%;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea.form-input {
+    resize: none;
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
