@@ -9,9 +9,9 @@
     <script src="../javascript/script.js" defer></script>
 </head>
 <body>
-<div class="container">
+<div class="containerform">
     <div class="form-container">
-        <img src="../images/logos/MG logo trans.png" alt="Logo">
+        <img src="../images/logos/form.jpg" alt="Logo">
         <form method="POST">
             <div class="container-price">
                 <label for="price">Prix :</label>
